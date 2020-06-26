@@ -1,6 +1,5 @@
 package fi.digitraffic;
 
-import fi.digitraffic.updaters.RoadWorksClient;
 import fi.digitraffic.updaters.RoadWorksUpdater;
 import io.quarkus.runtime.Startup;
 import org.slf4j.Logger;
