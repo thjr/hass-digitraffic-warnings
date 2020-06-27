@@ -1,0 +1,21 @@
+{
+        "name": "Digitraffic warnings",
+        "version": "1.0",
+        "description": "Import data from Digitraffic",
+        "slug": "hass_digitraffic_warnings",
+        "arch": [
+                "aarch64",
+                "amd64",
+                "armhf",
+                "armv7",
+                "i386"
+        ],
+        "boot": "auto",
+        "options": {
+        },
+        "schema": {
+        },
+        "homeassistant_api": true,
+        "host_network": true,
+        "startup": "application"
+}
