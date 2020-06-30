@@ -13,8 +13,8 @@ public class RoadWorksClient {
     private static final String DIGITRAFFIC_BASE_URL = "https://tie-test.digitraffic.fi/api/v2/data/traffic-datex2/";
 
     private final Client client = ClientBuilder.newBuilder() // Activate gzip compression on client:
-            .register(AcceptEncodingGZIPFilter.class)
-            .register(GZIPDecodingInterceptor.class)
+//            .register(AcceptEncodingGZIPFilter.class)
+//            .register(GZIPDecodingInterceptor.class)
             .build();
 
     public FeatureCollection getAllRoadWorks() {
