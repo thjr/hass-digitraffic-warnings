@@ -30,7 +30,7 @@ public class SensorValueService {
     }
 
     public int postRoadwork(final RoadworkData d) throws MalformedURLException {
-        final URL url = new URL(String.format("http://%s/api/states/sensor.digitraffic.roadwork_%s", HASSIO_ADDRESS, d.situationId));
+        final URL url = new URL(String.format("http://%s/api/states/sensor.digitraffic_roadwork_%s", HASSIO_ADDRESS, d.situationId));
         final Map<String, String> attributes = new HashMap<>();
         final HassStateData data = new HassStateData(d, attributes);
 
