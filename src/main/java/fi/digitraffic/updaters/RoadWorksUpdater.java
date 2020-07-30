@@ -27,10 +27,8 @@ public class RoadWorksUpdater {
     }
 
     public void update() {
-        System.out.println("update!");
-
         try {
-            final FeatureCollection featureCollection = roadWorksClient.getAllRoadWorks(); //"hass-digitraffic-warnings", "hass-digitraffic-warnings", "gzip");
+            final FeatureCollection featureCollection = roadWorksClient.getAllRoadWorks();
             final List<RoadworkData> data = convert(featureCollection);
 
             for(final RoadworkData d : data) {

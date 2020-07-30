@@ -12,7 +12,7 @@ import javax.ws.rs.client.ClientBuilder;
 public class RoadWorksClient {
     private static final String DIGITRAFFIC_BASE_URL = "https://tie-test.digitraffic.fi/api/v2/data/traffic-datex2/";
 
-    private final Client client = ClientBuilder.newBuilder() // Activate gzip compression on client:
+    private final Client client = ClientBuilder.newBuilder()
 //            .register(AcceptEncodingGZIPFilter.class)
 //            .register(GZIPDecodingInterceptor.class)
             .build();
@@ -20,6 +20,7 @@ public class RoadWorksClient {
     public FeatureCollection getAllRoadWorks() {
         return client.target(DIGITRAFFIC_BASE_URL + "traffic-incident.json")
                 .request()
+                .header("digitraffic-user", "hass-digitraffic-warnings")
                 .get(FeatureCollection.class);
     }
 

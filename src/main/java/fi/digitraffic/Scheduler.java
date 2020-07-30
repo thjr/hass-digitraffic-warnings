@@ -39,8 +39,6 @@ public class Scheduler {
     }
 
     private void updateRoadWorks() {
-        System.out.println("updateRoadWorks!");
-
         roadWorksUpdater.update();
     }
 }
