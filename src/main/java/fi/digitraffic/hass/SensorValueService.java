@@ -71,8 +71,8 @@ public class SensorValueService {
     }
 
     private static class HassStateData {
-        final Object state;
-        final Map<String, String> attributes;
+        public final Object state;
+        public final Map<String, String> attributes;
 
         private HassStateData(final Object state, final Map<String, String> attributes) {
             this.state = state;
