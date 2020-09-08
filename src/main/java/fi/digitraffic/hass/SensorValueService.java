@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static java.net.HttpURLConnection.HTTP_OK;
@@ -29,12 +30,12 @@ public class SensorValueService {
         this.hassioToken = token;
     }
 
-    public int postRoadwork(final RoadworkData d) throws MalformedURLException {
-        final URL url = new URL(String.format("http://%s/api/states/sensor.digitraffic_roadwork_%s", HASSIO_ADDRESS, d.situationId));
+    public int postRoadwork(final List<RoadworkData> data) throws MalformedURLException {
+        final URL url = new URL(String.format("http://%s/api/states/sensor.digitraffic_roadworks", HASSIO_ADDRESS));
         final Map<String, String> attributes = new HashMap<>();
-        final HassStateData data = new HassStateData(d, attributes);
+        final HassStateData hsd = new HassStateData(data, attributes);
 
-        return post(url, data);
+        return post(url, hsd);
     }
 
     private int post(final URL url, final HassStateData data) {

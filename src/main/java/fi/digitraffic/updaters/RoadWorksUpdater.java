@@ -31,11 +31,7 @@ public class RoadWorksUpdater {
             final FeatureCollection featureCollection = roadWorksClient.getAllRoadWorks();
             final List<RoadworkData> data = convert(featureCollection);
 
-            for(final RoadworkData d : data) {
-                System.out.println(d.situationId + ":" + d.title + " " + StringUtils.join(d.features, "-"));
-
-                sensorValueService.postRoadwork(d);
-            };
+            sensorValueService.postRoadwork(data);
         } catch(final Exception e) {
             System.out.println("got exception " + e);
         }
